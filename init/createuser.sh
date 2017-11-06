@@ -10,20 +10,20 @@ E_BADARGS=85
 
 LOG=$(defaults read /Library/Preferences/fi.olari.manage.plist LogFile)
 writeLog() {
-	timestamp=$(date)
-	echo "$timestamp -- $1" >> $LOG
+  timestamp=$(date)
+  echo "$timestamp -- $1" >> $LOG
 }
 
 if [[ $EUID -ne 0 ]]; then
-	writeLog "ERROR -- $0 was not runned as root!"
-	echo "Please run $0 as root!" && exit 1
+  writeLog "ERROR -- $0 was not runned as root!"
+  echo "Please run $0 as root!" && exit 1
 fi
 
 
 if [ $# -ne $ARGS ]; then
-	writeLog "ERROR -- $0 was supplied with $# arguments required ${ARGS}"
-	echo "Usage: `basename $0` username realname password"
-	exit $E_BADARGS
+  writeLog "ERROR -- $0 was supplied with $# arguments required ${ARGS}"
+  echo "Usage: `basename $0` username realname password"
+  exit $E_BADARGS
 fi
 
 USERNAME=$1

@@ -5,7 +5,7 @@
 INSTALL_CONFIG='/Volumes/SETUP/munki/munkiinstall_sample.plist'
 
 if (($EUID != 0 )); then
-	echo "SCRIPT MUST BE RUNNED AS ROOT"
+  echo "SCRIPT MUST BE RUNNED AS ROOT"
 else
 
 

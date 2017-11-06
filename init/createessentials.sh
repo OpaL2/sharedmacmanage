@@ -6,12 +6,12 @@
 LOG=$(defaults read /Library/Preferences/SharedMacManage.plist LogFile)
 BACKUP=$(defaults read /Library/Preferences/SharedMacManage.plist BackupPath)
 writeLog() {
-	timestamp=$(date)
-	echo "$timestamp -- $1" >> $LOG
+  timestamp=$(date)
+  echo "$timestamp -- $1" >> $LOG
 }
 
 if [[ $EUID -ne 0 ]]; then 
-	echo "Please run $0 as root!" && exit 1
+  echo "Please run $0 as root!" && exit 1
 fi
 
 

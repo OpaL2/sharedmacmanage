@@ -8,19 +8,19 @@ KEYCHAIN_PATH="/Library/Keychains/FileVaultMaster.keychain"
 
 LOG=$(defaults read /Library/Preferences/SharedMacManage.plist LogFile)
 writeLog() {
-	timestamp=$(date)
-	echo "$timestamp -- $1" >> $LOG
+  timestamp=$(date)
+  echo "$timestamp -- $1" >> $LOG
 }
 
 if [[ $EUID -ne 0 ]]; then
-	writeLog "ERROR -- $0 was not runned as root!"
-	echo "Please run $0 as root!" && exit 1
+  writeLog "ERROR -- $0 was not runned as root!"
+  echo "Please run $0 as root!" && exit 1
 fi
 
 if [ $# -ne $ARGS ]; then
-	writeLog "ERROR -- $0 was supplied with $# arguments required ${ARGS}"
-	echo "Usage: `basename $0` path_to_plist path_to_keychain"
-	exit $E_BADARGS
+  writeLog "ERROR -- $0 was supplied with $# arguments required ${ARGS}"
+  echo "Usage: `basename $0` path_to_plist path_to_keychain"
+  exit $E_BADARGS
 fi
 
 

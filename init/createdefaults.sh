@@ -6,7 +6,7 @@ LOGFILE="/usr/local/sharedmacmanage/sharedmanage.log"
 SHADOWHOME="/usr/local/sharedmacmanage/backup"
 
 if [[ $EUID -ne 0 ]]; then 
-	echo "Please run $0 as root!" && exit 1
+  echo "Please run $0 as root!" && exit 1
 fi
 
 defaults write /Library/Preferences/SharedMacManage.plist LogFile -string "$LOGFILE"

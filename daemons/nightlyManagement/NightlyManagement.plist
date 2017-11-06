@@ -2,23 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Label</key>
-	<string>NightlyManagement</string>
-	<key>ProgramArguments</key>
-	<array>
-		<string>caffeinate</string>
-		<string>-s</string>
-		<string>ruby</string>
-		<string>/usr/local/manage/lib/update.rb</string>
-	</array>
-	<key>RunAtLoad</key>
-	<false/>
-	<key>StartCalendarInterval</key>
-	<dict>
-		<key>Minute</key>
-		<integer>58</integer>
-		<key>Hour</key>
-		<integer>01</integer>
-	</dict>
+    <key>Label</key>
+    <string>NightlyManagement</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>caffeinate</string>
+        <string>-s</string>
+        <string>ruby</string>
+        <string>/usr/local/manage/lib/update.rb</string>
+    </array>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Minute</key>
+        <integer>58</integer>
+        <key>Hour</key>
+        <integer>01</integer>
+    </dict>
 </dict>
 </plist>
