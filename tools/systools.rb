@@ -2,23 +2,23 @@
 
 module SysTools
   
-  def SysTools.root?
+  def self.root?
     ENV['USER'] == 'root'
   end
   
-  def SysTools.runIfRoot &block
+  def self.runIfRoot &block
     yield block if root?
   end
   
-  def SysTools.runIfNotRoot &block
+  def self.runIfNotRoot &block
     yield block unless root?
   end
   
-  def SysTools.getLoggedUsers
+  def self.getLoggedUsers
     `who | awk '{split($0, arr, " "); print arr[1]}'`.split("\n").uniq
   end
   
-  def SysTools.logout username
+  def self.logout username
     system("launchctl bootout user/$(id -u #{username} )") == 0
   end
   

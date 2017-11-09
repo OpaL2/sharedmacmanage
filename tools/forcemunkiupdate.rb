@@ -6,7 +6,7 @@
 require_relative "systools"
 
 def main()
-  system("caffeinate","-i","-d","/usr/local/munki/managedsoftwareupdate")
+  system("caffeinate", "-i", "-d", "/usr/local/munki/managedsoftwareupdate")
   system("caffeinate", "-i", "-d", "/usr/local/munki/managedsoftwareupdate", "--installonly")
   system("reboot")
 end

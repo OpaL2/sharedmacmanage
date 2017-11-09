@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>sleepWatcher</string>
+    <string>SleepWatcher</string>
     <key>Program</key>
-    <string>/usr/local/manage/lib/sleepWatcher</string>
+    <string>/usr/local/sharedmacmanage/lib/sleepWatcher</string>
     <key>KeepAlive</key>
     <true/>
 </dict>

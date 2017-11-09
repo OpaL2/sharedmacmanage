@@ -3,7 +3,7 @@ require_relative 'directory'
 require_relative 'defaults'
 require_relative 'log'
 
-DEFAULTS = Defaults.new("/Library/Preferences/fi.olari.manage.plist")
+DEFAULTS = Defaults.new("/Library/Preferences/SharedMacManage.plist")
 LOG = Log.new(DEFAULTS.read :LogFile)
 
 def onLogin

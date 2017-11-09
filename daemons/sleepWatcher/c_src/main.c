@@ -32,7 +32,7 @@ void powerCallback (void *refCon, io_service_t y, natural_t msgType, void *msgAr
             //force sleep callback, cannot be canceled
             
             //running program which logs out all managed users and thus triggers home directory clearace
-            system("/usr/local/manage/lib/logoutmanagedusers.rb");
+            system("/usr/local/sharedmacmanage/lib/logoutmanagedusers.rb");
             IOAllowPowerChange(rootPort, (long) msgArgument);
             break;
             

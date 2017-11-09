@@ -24,3 +24,10 @@ Thumbs.db
 !SleepWatcher.plist
 !NightlyManagement.plist
 !LoginLogout.plist
+
+#key files
+*.keychain
+
+#xcode project for sleepwathcer daemon
+*.xcodeproj
+daemons/sleepWatcher/SleepWatcher/

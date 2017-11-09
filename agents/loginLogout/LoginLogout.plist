@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>ruby</string>
-        <string>/usr/local/manage/lib/loginlogout.rb</string>
+        <string>/usr/local/sharedmacmanage/lib/loginlogout.rb</string>
     </array>
     <key>KeepAlive</key>
     <true/>

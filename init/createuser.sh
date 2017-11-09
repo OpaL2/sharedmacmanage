@@ -8,7 +8,7 @@ ARGS=3
 E_BADARGS=85
 
 
-LOG=$(defaults read /Library/Preferences/fi.olari.manage.plist LogFile)
+LOG=$(defaults read /Library/Preferences/SharedMacManage.plist LogFile)
 writeLog() {
   timestamp=$(date)
   echo "$timestamp -- $1" >> $LOG
@@ -49,5 +49,5 @@ dscl . -append /Groups/$GROUP GroupMembership $USERNAME
 writeLog "INFO -- created new user $USERNAME"
 
 #Adding user as managed user to preferences
-defaults write /Library/Preferences/fi.olari.manage.plist ManagedUsers -array-add "$USERNAME"
+defaults write /Library/Preferences/SharedMacManage.plist ManagedUsers -array-add "$USERNAME"
 writeLog "INFO -- added new user $USERNAME to managed users list in fi.olari.manage.plist"

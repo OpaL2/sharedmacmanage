@@ -6,15 +6,15 @@ require_relative 'log'
 require_relative 'systools'
 require 'date'
 
-defaults = Defaults.new('/Library/Preferences/SharedMacManage.plist')
-log = Log.new(defaults.read :LogFile)
-network_adapter = defaults.read :NetworkAdapter
-managedUsers = defaults.readArray :ManagedUsers
+DEFAULTS = Defaults.new('/Library/Preferences/SharedMacManage.plist')
+log = Log.new(DEFAULTS.read :LogFile)
+network_adapter = DEFAULTS.read :NetworkAdapter
+managedUsers = DEFAULTS.readArray :ManagedUsers
 
 def removeOldBackups
-  path = defaults.read(:BackupPath).strip().gsub(/\/$/, '')
+  path = DEFAULTS.read(:BackupPath).strip().gsub(/\/$/, '')
   files = Dir[ path + '/*']
-  days = defaults.read :KeepBackup
+  days = DEFAULTS.read :KeepBackup
   lastToKeep = Date.today - (days.to_i + 1)
   files.each do |f|
     if /^backup_\S*_\d{8}\.zip$/ =~ File.basename(f)
@@ -29,7 +29,7 @@ def removeOldBackups
 end
 
 def cleanAndBackup user
-  d = Directory.new(user, defaults.read(:BackupPath)) do
+  d = Directory.new(user, DEFAULTS.read(:BackupPath)) do
     remove "~", :subdirsOnly
     remove "~/.Trash", :subdirsOnly
     keep "~/Desktop"
@@ -41,7 +41,7 @@ def cleanAndBackup user
     keep "~/Pictures"
     keep "~/Movies"
     keep "~/Music"
-    
+
     build
     backup
     clear
@@ -50,7 +50,7 @@ end
 
 log.write "INFO -- Started nightly updates"
 
-SysTools.getloggedUsers.each do |u|
+SysTools.getLoggedUsers.each do |u|
   SysTools.logout u
 end
 
@@ -63,7 +63,7 @@ removeOldBackups
 log.write "INFO -- Removed old backups"
 
 #Enabling wifi adapter
-system("ifconfig","#{network_adapter}","up")
+system("ifconfig",network_adapter.strip,"up")
 
 #running munki updates
 system("/usr/local/munki/supervisor","--delayrandom","3600","--timeout","14406","--","/usr/local/munki/managedsoftwareupdate","--auto")

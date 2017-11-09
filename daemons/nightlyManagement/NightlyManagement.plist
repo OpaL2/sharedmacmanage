@@ -9,7 +9,7 @@
         <string>caffeinate</string>
         <string>-s</string>
         <string>ruby</string>
-        <string>/usr/local/manage/lib/update.rb</string>
+        <string>/usr/local/sharedmacmanage/lib/update.rb</string>
     </array>
     <key>RunAtLoad</key>
     <false/>

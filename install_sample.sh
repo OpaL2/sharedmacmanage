@@ -15,7 +15,7 @@ source "${INSTALL_FILE_PATH}createessentials.sh"
 source "${MANAGEMENT_FILE_PATH}manageinstall.sh"
 
 #Creating managed users
-source "${INSTALL_FILE_PATH}createuser.sh" 'oppilas' 'Oppilas' 'oppilas' #Username, Real Name, password, see CreateUser.sh
+source "${INSTALL_FILE_PATH}createuser.sh" 'oppilas' 'Oppilas' 'olari' #Username, Real Name, password, see CreateUser.sh
 
 #Installing munki
 source "${MUNKI_FILE_PATH}munkiinstall.sh"
@@ -25,7 +25,7 @@ ruby ${MUNKI_FILE_PATH}munkiconfig.rb
 
 ruby ${INSTALL_FILE_PATH}setupwakeup.rb
 ruby ${INSTALL_FILE_PATH}setupfirewall.rb
-#source "${INSTALL_FILE_PATH}setupinstitutionalfilevault.sh" "${INSTALL_DATA_PATH}filevault_sample.plist" "${INSTALL_DATA_PATH}FileVaultMaster.keychain"
+source "${INSTALL_FILE_PATH}setupinstitutionalfilevault.sh" "${INSTALL_DATA_PATH}filevault_sample.plist" "${INSTALL_DATA_PATH}FileVaultMaster.keychain"
 
 
 #Rebooting system
