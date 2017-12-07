@@ -15,15 +15,15 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
+BASE="/usr/local/sharedmacmanage"
+mkdir $BASE $BASE/lib
+mkdir -p $BACKUP
+
+writeLog "INFO -- created directory structure"
+
 touch $LOG
 chmod 633 $LOG
 writeLog "INFO -- Log file created"
 
 dseditgroup -o create -r "SharedMacManage" managed
 writeLog "INFO -- created user group managed"
-
-BASE="/usr/local/sharedmacmanage"
-mkdir $BASE $BASE/lib
-mkdir -p $BACKUP
-
-writeLog "INFO -- created directory structure"
