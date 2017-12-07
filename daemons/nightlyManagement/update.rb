@@ -57,6 +57,7 @@ end
 managedUsers.each do |u|
   cleanAndBackup u
 end
+
 log.write "INFO -- Cleared managed users home directories"
 
 removeOldBackups
